@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Micro-Factory OS</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-mark">
+                MF
+            </div>
+
+            <div>
+                <div class="brand-name">
+                    Micro-Factory
+                </div>
+
+                <div class="brand-subtitle">
+                    OPERATING SYSTEM
+                </div>
+            </div>
+        </div>
+
+
+        <nav class="navigation">
+
+            <a href="#" class="nav-item active">
+                <span>⌂</span>
+                Overview
+            </a>
+
+            <a href="#" class="nav-item">
+                <span>◫</span>
+                Orders
+            </a>
+
+            <a href="#" class="nav-item">
+                <span>◈</span>
+                Factories
+            </a>
+
+            <a href="#" class="nav-item">
+                <span>◌</span>
+                Production
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="network-card">
+
+                <div class="network-icon">
+                    ●
+                </div>
+
+                <div>
+                    <strong>Network Online</strong>
+
+                    <p>
+                        3 factories connected
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+
+    <main class="main">
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+            <div>
+                <div class="eyebrow">
+                    MANUFACTURING CONTROL CENTER
+                </div>
+
+                <h1>
+                    Good morning.
+                </h1>
+            </div>
+
+            <div class="topbar-right">
+
+                <div class="live-status">
+                    <span></span>
+                    LIVE NETWORK
+                </div>
+
+                <div class="avatar">
+                    MF
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <div class="hero-label">
+                    VIRTUAL FACTORY
+                </div>
+
+                <h2>
+                    One order.<br>
+                    <span>Multiple factories.</span>
+                </h2>
+
+                <p>
+                    Give us a manufacturing requirement.
+                    We'll coordinate the factories behind
+                    the scenes and deliver it as one order.
+                </p>
+
+            </div>
+
+            <div class="hero-visual">
+
+                <div class="orbit orbit-one"></div>
+                <div class="orbit orbit-two"></div>
+
+                <div class="central-node">
+                    <span>50K</span>
+                    <small>UNITS</small>
+                </div>
+
+                <div class="factory-node node-one">
+                    <span>01</span>
+                </div>
+
+                <div class="factory-node node-two">
+                    <span>02</span>
+                </div>
+
+                <div class="factory-node node-three">
+                    <span>03</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ORDER SECTION -->
+
+        <section class="section">
+
+            <div class="section-heading">
+
+                <div>
+                    <div class="eyebrow">
+                        START MANUFACTURING
+                    </div>
+
+                    <h3>
+                        Create an order
+                    </h3>
+                </div>
+
+                <div class="step">
+                    STEP 01 / 03
+                </div>
+
+            </div>
+
+
+            <form method="POST" class="order-card">
+
+                <div class="form-grid">
+
+                    <div class="form-field large">
+
+                        <label>
+                            PART NAME
+                        </label>
+
+                        <input
+                            type="text"
+                            name="part"
+                            placeholder="e.g. Aluminium Bracket"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label>
+                            QUANTITY
+                        </label>
+
+                        <input
+                            type="number"
+                            name="quantity"
+                            placeholder="50,000"
+                            min="1"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label>
+                            MATERIAL
+                        </label>
+
+                        <select name="material" required>
+
+                            <option value="">
+                                Select material
+                            </option>
+
+                            <option>
+                                Aluminium
+                            </option>
+
+                            <option>
+                                Stainless Steel
+                            </option>
+
+                            <option>
+                                Mild Steel
+                            </option>
+
+                            <option>
+                                Brass
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label>
+                            DELIVERY DEADLINE
+                        </label>
+
+                        <input
+                            type="text"
+                            name="deadline"
+                            placeholder="e.g. 30 days"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-footer">
+
+                    <div class="secure-note">
+                        <span>✦</span>
+                        Your manufacturing data stays private.
+                    </div>
+
+                    <button type="submit">
+
+                        Create Manufacturing Order
+
+                        <span>
+                            →
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        {% if order.created %}
+
+        <!-- ORDER RESULT -->
+
+        <section class="section">
+
+            <div class="section-heading">
+
+                <div>
+                    <div class="eyebrow">
+                        ORDER #MF-001
+                    </div>
+
+                    <h3>
+                        Production overview
+                    </h3>
+                </div>
+
+                <div class="order-status">
+                    <span></span>
+                    {{ order.status }}
+                </div>
+
+            </div>
+
+
+            <!-- SUMMARY -->
+
+            <div class="metrics">
+
+                <div class="metric-card">
+
+                    <div class="metric-label">
+                        ORDER QUANTITY
+                    </div>
+
+                    <div class="metric-value">
+                        {{ "{:,}".format(order.quantity) }}
+                    </div>
+
+                    <div class="metric-description">
+                        {{ order.material }}
+                        {{ order.part }}
+                    </div>
+
+                </div>
+
+
+                <div class="metric-card highlight">
+
+                    <div class="metric-label">
+                        PRODUCED
+                    </div>
+
+                    <div class="metric-value">
+
+                        {{ "{:,}".format(order.total_produced) }}
+
+                    </div>
+
+                    <div class="progress">
+
+                        <div
+                            class="progress-bar"
+                            style="width: {{ (order.total_produced / order.quantity * 100)|round }}%"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="metric-card">
+
+                    <div class="metric-label">
+                        FACTORIES
+                    </div>
+
+                    <div class="metric-value">
+                        03
+                    </div>
+
+                    <div class="metric-description">
+                        Coordinated network
+                    </div>
+
+                </div>
+
+
+                <div class="metric-card">
+
+                    <div class="metric-label">
+                        DELIVERY
+                    </div>
+
+                    <div class="metric-value">
+                        {{ order.deadline }}
+                    </div>
+
+                    <div class="metric-description">
+                        Target deadline
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FACTORIES -->
+
+            <div class="production-card">
+
+                <div class="production-header">
+
+                    <div>
+                        <div class="eyebrow">
+                            NETWORK ALLOCATION
+                        </div>
+
+                        <h4>
+                            Production across factories
+                        </h4>
+                    </div>
+
+                    <div class="allocation-total">
+                        {{ "{:,}".format(order.quantity) }} units
+                    </div>
+
+                </div>
+
+
+                <div class="factory-list">
+
+                    {% for factory in order.factories %}
+
+                    <div class="factory-row">
+
+                        <div class="factory-info">
+
+                            <div class="factory-icon">
+                                {{ loop.index }}
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    {{ factory.name }}
+                                </strong>
+
+                                <p>
+                                    {{ factory.location }}
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="factory-progress">
+
+                            <div class="factory-progress-top">
+
+                                <span>
+                                    {{ "{:,}".format(factory.produced) }}
+                                    /
+                                    {{ "{:,}".format(factory.allocated) }}
+                                </span>
+
+                                <span>
+                                    {{ factory.status }}
+                                </span>
+
+                            </div>
+
+                            <div class="progress">
+
+                                <div
+                                    class="progress-bar
+                                    {% if factory.status == 'Complete' %}
+                                    complete
+                                    {% endif %}"
+                                    style="width: {{ (factory.produced / factory.allocated * 100)|round }}%"
+                                ></div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="factory-status
+                            {% if factory.status == 'Complete' %}
+                            complete
+                            {% endif %}">
+
+                            {% if factory.status == "Complete" %}
+                                ✓
+                            {% else %}
+                                •
+                            {% endif %}
+
+                        </div>
+
+                    </div>
+
+                    {% endfor %}
+
+                </div>
+
+            </div>
+
+
+            <!-- JOURNEY -->
+
+            <div class="journey">
+
+                <div class="journey-line"></div>
+
+                <div class="journey-step active">
+
+                    <div class="journey-dot">
+                        ✓
+                    </div>
+
+                    <strong>
+                        Order received
+                    </strong>
+
+                    <span>
+                        Requirements confirmed
+                    </span>
+
+                </div>
+
+
+                <div class="journey-step active">
+
+                    <div class="journey-dot">
+                        ✓
+                    </div>
+
+                    <strong>
+                        Factory allocation
+                    </strong>
+
+                    <span>
+                        3 factories assigned
+                    </span>
+
+                </div>
+
+
+                <div class="journey-step current">
+
+                    <div class="journey-dot">
+                        03
+                    </div>
+
+                    <strong>
+                        Manufacturing
+                    </strong>
+
+                    <span>
+                        Production underway
+                    </span>
+
+                </div>
+
+
+                <div class="journey-step">
+
+                    <div class="journey-dot">
+                        04
+                    </div>
+
+                    <strong>
+                        Quality & delivery
+                    </strong>
+
+                    <span>
+                        Coming next
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        {% endif %}
+
+
+        <!-- FOOTER -->
+
+        <footer>
+
+            <div>
+                MICRO-FACTORIES OS
+            </div>
+
+            <div>
+                Turning fragmented capacity into one factory.
+            </div>
+
+        </footer>
+
+    </main>
+
+</div>
+
+</body>
+</html>
